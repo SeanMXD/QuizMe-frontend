@@ -27,6 +27,7 @@ export default class MusicButton extends React.Component {
         this.sourceNode = this.ctx.createBufferSource();
         this.sourceNode.connect(this.ctx.destination);
         this.sourceNode.buffer = this.buffer;
+        this.sourceNode.loop = true;
         this.paused = false;
     
         if (this.pausedAt) {
