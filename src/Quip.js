@@ -10,7 +10,7 @@ class Quip extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:2020/quips')
+        fetch(`${process.env.REACT_APP_API_URL}/quips`)
       .then(response => response.json())
       .then(data => this.setState({ data }))
       .then(data => console.log(data));
@@ -24,7 +24,7 @@ class Quip extends Component {
     }
 
     // fetchQuipData = () => {
-    //   return fetch('http://localhost:2020/quips')
+    //   return fetch(`${process.env.REACT_APP_API_URL}/quips`)
     //   .then(response => response.json())
     //   .then(data => console.log(data));
     // }    

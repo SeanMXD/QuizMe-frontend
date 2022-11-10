@@ -34,7 +34,7 @@ class Login extends Component {
           console.log("FETCH")
           var username = document.getElementById("quizme-login-username").value;
           var password = document.getElementById("quizme-login-password").value;
-          fetch("http://localhost:2020/users/login", {
+          fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
             method: "POST",
             headers: {
               'Content-Type': 'application/json'

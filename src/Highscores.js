@@ -42,7 +42,7 @@ class Highscores extends Component {
         var name = document.getElementById("quizme-highscores-score"+id+"-name").value || 
             document.getElementById("quizme-highscores-score"+id+"-name").placeholder;
         var score = document.getElementById("quizme-highscores-score"+id+"-score").value;
-        fetch(`http://localhost:2020/highscores/${id}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/highscores/${id}`, {
             method: "PUT",
             body: JSON.stringify({
                 playername: name,
@@ -59,7 +59,7 @@ class Highscores extends Component {
     }
     
     fetchScoreData = (category) => {
-        return fetch(`http://localhost:2020/highscores/${category}`).then(data => data.json()).then(response => {
+        return fetch(`${process.env.REACT_APP_API_URL}/highscores/${category}`).then(data => data.json()).then(response => {
             this.setState(
                 {
                     scoreData: response
